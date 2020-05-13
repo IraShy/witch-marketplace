@@ -1,0 +1,24 @@
+<div class="row content mt-3">
+  <div class="col-md-4">
+    <%# <%= image_tag image_for(@product) , alt: "#{@product.name} image", class: 'mt-2', style: 'width:100%;' %> 
+  </div>
+  <div class="col-md-8">
+    <h1><%= @product.name %></h1>
+    <div>
+      <strong>Category:  </strong>
+      <span><%= @product.category.name %></span>
+    </div>
+    
+    <p><%= @product.description %></p>
+    
+    <%# <% if can? :edit, @product %> 
+         <%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-info'%>
+    <%# <% end %> 
+
+    <%# <% if can? :destroy, @product %> 
+        <%= link_to 'Delete', product_path(@product), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?"} %>
+    <%# <% end %> 
+
+    <%= link_to 'Back', products_path, class: 'btn btn-primary' %> 
+  </div>
+</div>

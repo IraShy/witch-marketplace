@@ -1,0 +1,15 @@
+<%# <%= render "shared/form-errors", resource: listing %> 
+
+<%= form_with model: @product, local: true, class: "listings-form" do |form| %>
+  <%= form.label :product_name %>
+  <%= form.text_field :name %>
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+  <%= form.label :category %>
+  <%= form.collection_select(:category_id, Category.all, :id, :name) %>
+  <%= form.label :price %>
+  <%= form.text_field :price %>
+  <%# <%= form.label :image %> 
+  <%# <%= form.file_field :image, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+  <%= form.submit %>
+<% end %>
