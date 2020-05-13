@@ -1,10 +1,10 @@
 <nav>
   <%= link_to "Home", root_path %>
   <%= link_to "Add new ad", new_product_path %>
-  <%# <% if user_signed_in? %> 
-    <%# <%= link_to "Logout", destroy_user_session_path, method: :delete %> 
+  <% if user_signed_in? %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
     <%# <%= link_to "Cart", carts_path %> 
-  <%# <% else %> 
-    <%# <%= link_to "Login", new_user_session_path %> 
-  <%# <% end %> 
+  <% else %> 
+    <%= link_to "Login", new_user_session_path %>
+  <% end %>
 </nav>

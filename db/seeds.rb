@@ -9,9 +9,9 @@
 
 
 # Order.destroy_all
-# Category.destroy_all
-# Product.destroy_all
-# User.destroy_all
+Category.destroy_all
+Product.destroy_all
+User.destroy_all
 
 # Create users
 user_1 = User.create(name: 'user_1', email: 'user1@mail.com', password: 'password')
