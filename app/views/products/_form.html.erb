@@ -9,7 +9,7 @@
   <%= form.collection_select(:category_id, Category.all, :id, :name) %>
   <%= form.label :price %>
   <%= form.text_field :price %>
-  <%# <%= form.label :image %> 
-  <%# <%= form.file_field :image, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+  <%= form.label :image %>
+  <%= form.file_field :image, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
   <%= form.submit %>
 <% end %>

@@ -1,7 +1,7 @@
 
   <% @products.each do |product| %>
     
-    <%# <%= image_tag image_for(restaurant) , alt: "#{restaurant.name} image", class: 'card-img-top img_fluid' %> 
+    <%= image_tag product.image if product.image.attached?, class: 'card-img-top img_fluid' %>
     
   
     <h3 class="card-title"><%= product.name %></h3>

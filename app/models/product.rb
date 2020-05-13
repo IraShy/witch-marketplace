@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   belongs_to :user
   belongs_to :category
   has_one    :order
-  # has_one_attached :image
+  has_one_attached :image
 
   def price_display
     '$' + sprintf('%.2f', (self.price / 100.0))
