@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :categories 
   resources :products
   
+  get "/payments/session", to: "payments#get_stripe_id"
+  get "/payments/success", to: "payments#success"
 end
