@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :find_product ,only: [:show, :edit, :update, :destroy] 
   before_action :authenticate_user!, except: [:index, :show]
+  load_and_authorize_resource
   
   def index
     @products = Product.all.order('created_at ASC').drop(Product.all.length-7)
@@ -22,7 +23,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new(product_params)
+    @product = Product.new
   end
 
   def edit
