@@ -4,6 +4,7 @@
   </div>
   <div class="col-md-8">
     <h1><%= @product.name %></h1>
+    <%= image_tag @product.image if @product.image.attached? %>
     <div>
       <strong>Category:  </strong>
       <span><%= @product.category.name %></span>
@@ -11,13 +12,13 @@
     
     <p><%= @product.description %></p>
     
-    <%# <% if can? :edit, @product %> 
+    <% if can? :edit, @product %>
          <%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-info'%>
-    <%# <% end %> 
+    <% end %>
 
-    <%# <% if can? :destroy, @product %> 
+    <% if can? :destroy, @product %>
         <%= link_to 'Delete', product_path(@product), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?"} %>
-    <%# <% end %> 
+    <% end %>
 
     <%= link_to 'Back', products_path, class: 'btn btn-primary' %> 
   </div>
