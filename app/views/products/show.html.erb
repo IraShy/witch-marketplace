@@ -7,7 +7,7 @@
     <%= image_tag @product.image if @product.image.attached? %>
     <div>
       <strong>Category:  </strong>
-      <span><%= @product.category.name %></span>
+      <%= link_to Category.find(@product.category_id).name, category_path(@product.category_id) %>
     </div>
     
     <p><%= @product.description %></p>

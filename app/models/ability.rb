@@ -6,6 +6,7 @@ class Ability
   def initialize(user)
 
     can :read, Product
+    can :read, Category
       
     if user.present?
       can :create,  Product

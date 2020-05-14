@@ -8,7 +8,7 @@
   <%= form.text_field :description %>
 
   <%= form.label :category %>
-  <%= form.collection_select(:category_id, Category.all, :id, :name) %>
+  <%= form.collection_select(:category_id, Category.all, :id, :name, prompt: 'Select category') %>
 
   <%= form.label :price %>
   <%= form.text_field :price %>

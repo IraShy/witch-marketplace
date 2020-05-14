@@ -1,10 +1,8 @@
 
-  <% @products.each do |product| %>
-    
-    
+  <% @products.each do |product| %> 
   
     <h3 class="card-title"><%= product.name %></h3>
-    <h6 class="card-subtitle mb-2 text-muted"><%= product.category.name %></h6>
+    <h5 class="card-subtitle mb-2 text-muted"><%= link_to"#{product.category.name}", category_path(product.category) %></h6>
     <%= image_tag product.image if product.image.attached? %>
     <p class="card-text"><%= product.description %></p>
     <p><%= product.price_display %></p>

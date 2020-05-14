@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :find_product ,only: [:show, :edit, :update, :destroy] 
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :show_sidebar, only: [:index, :show]
   load_and_authorize_resource
   
   def index
@@ -51,5 +52,9 @@ class ProductsController < ApplicationController
 
   def find_product
     @product = Product.find(params[:id])
+  end
+
+  def show_sidebar
+    @show_sidebar = true
   end
 end
