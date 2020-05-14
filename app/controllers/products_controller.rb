@@ -4,8 +4,7 @@ class ProductsController < ApplicationController
   load_and_authorize_resource
   
   def index
-    # @products = Product.all.order('created_at ASC').drop(Product.all.length-7)
-    @products = Product.all.order('created_at DESC')
+    Product.all.length > 6 ? @products = Product.all.order('created_at ASC').drop(Product.all.length-6).reverse : @products = Product.all.order('created_at DESC')
 
   end
 
