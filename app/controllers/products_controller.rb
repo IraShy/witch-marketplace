@@ -1,11 +1,20 @@
 class ProductsController < ApplicationController
+  
   before_action :find_product ,only: [:show, :edit, :update, :destroy] 
   before_action :authenticate_user!, except: [:index, :show]
   before_action :show_sidebar, only: [:index, :show]
+  before_action :find_unsold, only: [:index]
   load_and_authorize_resource
   
   def index
-    Product.all.length > 6 ? @products = Product.all.order('created_at ASC').drop(Product.all.length-6).reverse : @products = Product.all.order('created_at DESC')
+    num_prod = @unsold_products.length
+    products_shown = 6
+    
+    if num_prod > products_shown 
+      @products = @unsold_products.order('created_at ASC').drop(num_prod - products_shown).reverse
+    else
+      @products = @unsold_products.order('created_at DESC')
+    end
 
   end
 
@@ -56,5 +65,9 @@ class ProductsController < ApplicationController
 
   def show_sidebar
     @show_sidebar = true
+  end
+
+  def find_unsold
+    @unsold_products = Product.all.where(sold: false)
   end
 end

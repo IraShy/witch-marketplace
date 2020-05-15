@@ -2,12 +2,12 @@
 
 <% if can? :manage, :all %>
   <%= link_to 'Edit category', edit_category_path(@category), class: 'btn btn-info' %>
-  <% if @category.products.empty? %>
+  <% if @products.empty? %>
     <%= link_to 'Delete category', @category, method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?"} %>
   <% end %>
 <% end %>
 
-<% @category.products.each do |product| %>
+<% @products.each do |product| %>
   
   <h3 class="card-title"><%= product.name %></h3>
   <%= image_tag product.image if product.image.attached? %>
