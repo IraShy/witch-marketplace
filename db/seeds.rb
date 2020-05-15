@@ -16,7 +16,7 @@ User.destroy_all
 # Create users
 user_1 = User.create(name: 'user_1', email: 'user1@mail.com', password: 'password')
 buyer = User.create(name: 'buyer', email: 'buyer@mail.com', password: 'password')
-# user_3 = User.create(name: 'admin', email: 'admin@mail.com', password: 'password', admin: true)
+user_3 = User.create(name: 'admin', email: 'admin@mail.com', password: 'password', admin: true)
 
 # Create topics
 

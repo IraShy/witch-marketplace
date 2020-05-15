@@ -3,16 +3,28 @@ class PaymentsController < ApplicationController
 
   def get_stripe_id
     @product = Product.find(params[:id])
+    products = []
+    for i in 1..3 do
+      products << {
+        name: 'name',
+        description: 'description',
+        amount: 200,
+        currency: 'aud',
+        quantity: i,
+      }
+
+    end
     session_id = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       customer_email: current_user.email,
-      line_items: [{
-        name: @product.name,
-        description: @product.description,
-        amount: @product.price,
-        currency: 'aud',
-        quantity: 1,
-      }],
+      line_items: products,
+      # line_items: [{
+      #   name: @product.name,
+      #   description: @product.description,
+      #   amount: @product.price,
+      #   currency: 'aud',
+      #   quantity: 1,
+      # }],
       payment_intent_data: {
         metadata: {
           user_id: current_user.id,

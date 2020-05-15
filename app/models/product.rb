@@ -5,7 +5,8 @@ class Product < ApplicationRecord
 
   belongs_to :user
   belongs_to :category
-  has_one    :order
+  has_many :order_products
+  has_many :orders, through: :order_products
   has_one_attached :image
 
   def price_display
