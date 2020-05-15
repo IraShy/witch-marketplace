@@ -11,8 +11,8 @@
     </div>
     
     <p><%= @product.description %></p>
-
-    <%= link_to "Buy", "", id: "stripe" %>
+    <% if user_signed_in? && @product.user.id != current_user.id %>
+      <%= link_to "Buy", "", id: "stripe" %>
     
     <% if can? :edit, @product %>
          <%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-info'%>
