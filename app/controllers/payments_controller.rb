@@ -21,7 +21,7 @@ class PaymentsController < ApplicationController
       payment_intent_data: {
         metadata: {
           user_id: current_user.id,
-          product_id: @order.id
+          order_id: @order.id
         }
       },
       success_url: "#{root_url}payments/success?userId=#{current_user.id}&productId=#{@order.id}",
@@ -46,6 +46,10 @@ class PaymentsController < ApplicationController
   end
 
   def success
-    @product = Product.find(params[:productId])
+    @order = Order.find(params[:orderId])
+    @total = 0
+    @order.products.each do |product|
+      @total += product.price
+    end
   end
 end

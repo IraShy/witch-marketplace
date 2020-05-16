@@ -1,3 +1,8 @@
-<h1>You successfully purchased <%= @product.name %></h1>
+<h1>Blessed be thy wallet!</h1>
 
-<h3>You paid <%= number_to_currency(@product.price / 100) %></h3>
+<% @order.products.each do |product| %>
+    <p><%= product.name %></p>
+    <p><%= price_display(product.price) %></p>
+  <% end %>
+<h2>Total paid:</h2>
+<%= price_display(@total) %> 
