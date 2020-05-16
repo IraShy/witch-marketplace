@@ -1,0 +1,45 @@
+@import 'products';
+@import 'sidebar';
+
+body {
+margin-left: 0;
+padding: 0;
+// background: linear-gradient(315deg, #ec9f05 0%, #fc575e 74%);
+// font-family: 'Almendra', serif;
+font-family: 'Caudex', serif;
+
+.card-title {font-family: 'Averia Libre', cursive;}
+h2 {font-family: 'Averia Libre', cursive;}
+
+.btn {
+  font-family: 'Almendra', serif;
+  font-weight: bold;
+}
+
+}
+
+a {
+    text-decoration: none;
+    text-align: right;
+}
+
+
+nav {
+    height: 50px;
+    font-family: 'Almendra', serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border: 1px solid black;
+    a {
+        margin: 20px 20px;
+        text-align: right;
+        color: black;
+        font-size: 18pt;
+        padding-top: 15px;
+      }
+    a:hover {
+        color: white;
+      }
+}
+

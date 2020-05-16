@@ -1,0 +1,15 @@
+.sidebar {
+  a {
+  font-family: 'Almendra', serif;
+  font-size: 18pt;
+  }
+  border: 1px solid black;
+  position: fixed;
+  top: 25%;
+  text-align: center;
+  width: 20%;
+
+  a:hover {
+        color: white;
+  }
+}
