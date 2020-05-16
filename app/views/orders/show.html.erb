@@ -1,0 +1,10 @@
+ <% if !@order %>
+  <h3>Your cart is empty</h3>
+ <% else %>
+  <% @order.products.each do |product| %>
+    <p><%= product.name %></p>
+    <p><%= product.price %></p>
+  <% end %>
+  <%= link_to "Pay now", "/payments/session", id: "stripe" %>
+<% end %>
+<%= javascript_pack_tag "stripe" %>

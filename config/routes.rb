@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   resources :categories 
   resources :products
+  resources :orders, only: [:create, :show]
   
   get "/payments/session", to: "payments#get_stripe_id"
   get "/payments/success", to: "payments#success"
