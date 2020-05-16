@@ -12,4 +12,10 @@ class Product < ApplicationRecord
   def price_display
     '$' + sprintf('%.2f', (self.price / 100.0))
   end
+
+  def short_description
+    if self.description.length > 70
+      self.description[0..69] + '...'
+    end
+  end
 end
