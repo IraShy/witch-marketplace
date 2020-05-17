@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-show">
  
   <div class="show">
     <h1 class="card-title"><%= @product.name %></h1>
@@ -31,19 +31,20 @@
       <%= link_to 'Back', products_path, class: 'btn btn-primary' %> 
     </section>
   </div>
-
-  <div class="similar">
     <% if @similar_products.any? %>
       <h2>Similar products:</h2>
-      <% @similar_products.each do |product| %> 
+      <div class="similar">
+        <% @similar_products.each do |product| %> 
     
-        <h3 class="card-title"><%= product.name %></h3>
-        <%= image_tag product.image if product.image.attached? %>
-        <p class="card-text"><%= product.description %></p>
-        <p><%= product.price_display %></p>
-
-        <%= link_to 'View', product_path(product), class: 'btn btn-primary' %>
+          <div class="card-similar">
+            <%= link_to product_path(product) do %>
+              <h3 class="card-title"><%= product.name %></h3>
+              <%= image_tag product.image if product.image.attached? %>
+            <% end %>
+            <p class="card-price"><%= product.price_display %></p>          
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
   </div>
+
 </div>
