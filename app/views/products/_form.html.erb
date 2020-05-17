@@ -1,20 +1,28 @@
+<%= form_with model: @product, local: true, class: "products-form" do |form| %>
+  <div>
+    <%= form.label :product_name %>
+    <%= form.text_field :name, maxlength: 20 %>
+  </div>
 
-<%= form_with model: @product, local: true do |form| %>
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description, maxlength: 255, size: 30 %>
+  </div>
 
-  <%= form.label :product_name %>
-  <%= form.text_field :name, maxlength: 20 %>
+  <div>
+    <%= form.label :category %>
+    <%= form.collection_select(:category_id, Category.all, :id, :name, prompt: 'Select category') %>
+  </div>
 
-  <%= form.label :description %>
-  <%= form.text_field :description, maxlength: 255, size: 30 %>
+  <div>
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
 
-  <%= form.label :category %>
-  <%= form.collection_select(:category_id, Category.all, :id, :name, prompt: 'Select category') %>
-
-  <%= form.label :price %>
-  <%= form.text_field :price %>
-
-  <%= form.label :image %>
-  <%= form.file_field :image, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+  <div>
+    <%= form.label :image %>
+    <%= form.file_field :image, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+  </div>
   
-  <%= form.submit %>
+  <%= form.submit "Add" %>
 <% end %>

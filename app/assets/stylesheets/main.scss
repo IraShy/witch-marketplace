@@ -1,4 +1,5 @@
 @import 'products/index';
+@import 'products/form';
 // @import 'products/show';
 // @import 'products';
 @import 'sidebar';
@@ -9,6 +10,20 @@ padding: 0;
 // background: linear-gradient(315deg, #ec9f05 0%, #fc575e 74%);
 // font-family: 'Almendra', serif;
 font-family: 'Caudex', serif;
+
+.content{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: calc(100vh - 60px);
+
+  h1 {
+    text-align: center;
+  }
+}
 
 .card-title {font-family: 'Averia Libre', cursive;}
 h2 {font-family: 'Averia Libre', cursive;}
