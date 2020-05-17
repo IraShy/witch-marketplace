@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :show_sidebar, only: [:index, :show]
   before_action :find_unsold, only: [:index]
+  before_action :find_similar_products ,only: [:show]
   load_and_authorize_resource
   
   def index
@@ -69,5 +70,16 @@ class ProductsController < ApplicationController
 
   def find_unsold
     @unsold_products = Product.all.where(sold: false)
+  end
+
+   def find_similar_products
+    similar = @product.category.products.where(sold: false) - [@product]
+    if similar.any?
+      if similar.length > 2
+        @similar_products = similar.sample(3)
+      else 
+        @similar_products = similar
+      end
+    end
   end
 end
