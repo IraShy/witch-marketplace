@@ -1,14 +1,14 @@
 
-<%= form_with model: @category, local: true do |form| %>
+<%= form_with model: @category, local: true, class: "products-form" do |form| %>
 
   <%= form.label :category_name %>
   <%= form.text_field :name %>
 
-  <%# <%= form.label :description %> 
-  <%# <%= form.text_field :description %> 
+  <%= form.label :description %> 
+  <%= form.text_field :description %> 
 
-  <%# <%= form.label :image %> 
-  <%# <%= form.file_field :image, accept: 'image/png,image/gif,image/jpeg,image/jpg' %> 
+  <%= form.label :image %>
+  <%= form.file_field :image, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
   
-  <%= form.submit %> 
+  <%= form.submit %>
 <% end %>

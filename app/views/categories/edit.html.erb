@@ -1,5 +1,7 @@
-<h1>Edit <%= @category.name %></h1>
+<div class="content">
+  <h1>Edit <%= @category.name %></h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Cancel', category_path(@category), class: 'btn btn-primary' %>
+  <%= link_to '☠ Cancel ☠', category_path(@category), class: 'btn btn-primary btn-cancel' %>
+</div>
