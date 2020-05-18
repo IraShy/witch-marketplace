@@ -1,5 +1,5 @@
 @import 'products/index';
-@import 'products/form';
+@import 'form';
 // @import 'products/show';
 // @import 'products';
 @import 'sidebar';
@@ -7,7 +7,7 @@
 body {
 margin-left: 0;
 padding: 0;
-// background: linear-gradient(315deg, #ec9f05 0%, #fc575e 74%);
+background: linear-gradient(315deg, #ec9f05 0%, #fc575e 74%);
 // font-family: 'Almendra', serif;
 font-family: 'Caudex', serif;
 
@@ -23,6 +23,7 @@ font-family: 'Caudex', serif;
   h1 {
     text-align: center;
   }
+
 }
 
 .card-title {font-family: 'Averia Libre', cursive;}
@@ -31,14 +32,45 @@ h2 {font-family: 'Averia Libre', cursive;}
 .btn {
   font-family: 'Almendra', serif;
   font-weight: bold;
-}
+  font-size: 16px;
+  display: block;
+  margin: 20px 0px;
+  border: 1px solid black;
+  padding: 12px 25px;
+  color: buttontext;
+  background-color: rgb(253, 230, 199);
+  box-sizing: border-box;
+  // border-image: initial;
+  display: block; 
+  font-weight: bold;
+  align-self: center;
+  }
 
-}
+  .btn:hover {
+    color: black;
+  }
+
+  .btn-cancel {
+    background-color: rgb(241, 39, 12);
+  }
+
+  .btn-cancel:hover {
+    background-color: rgb(219, 72, 72);
+    transition: 0.5s;
+  }
 
 a {
     text-decoration: none;
     text-align: right;
+    color: rgb(42, 5, 10);
+    align-self: center;
+  }
+
+a:hover {
+  color: rgb(253, 230, 199);
 }
+}
+
 
 
 nav {
@@ -48,15 +80,13 @@ nav {
     top: 0;
     width: 100%;
     border: 1px solid black;
+    background: linear-gradient(315deg, #ec8005 0%, #fa5454 74%);
     a {
         margin: 20px 20px;
         text-align: right;
-        color: black;
         font-size: 18pt;
-        padding-top: 15px;
+        // padding-top: 30px;
       }
-    a:hover {
-        color: white;
-      }
+    
 }
 

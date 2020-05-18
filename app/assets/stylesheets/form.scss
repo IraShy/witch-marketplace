@@ -4,7 +4,8 @@
   align-items: start;
   justify-content: space-between;
   
-  * {font-family: 'Caudex', serif;
+  * {
+    font-family: 'Caudex', serif;
     margin-bottom: 10px;
     }
 
@@ -31,6 +32,8 @@
     // border: 1px solid black;
     padding: 12px 25px;
     font-size: 16px;
+    font-weight: bold;
+    font-family: 'Almendra', serif;
     align-self: center;
     // -webkit-appearance: none;
   }
