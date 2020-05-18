@@ -1,10 +1,27 @@
- <% if !@order %>
-  <h3>Your cart is empty</h3>
- <% else %>
-  <% @order.products.each do |product| %>
-    <p><%= product.name %></p>
-    <p><%= product.price %></p>
+ <div class="container">
+  <% if !@order %>
+    <h2>Your cart is empty</h3>
+  <% else %>
+    <h2>Your cart:</h3>
+    <table>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+      </tr>
+    <% @order.products.each do |product| %>
+      <tr>
+        <td>
+          <%= link_to product_path(product[:id]) do %>
+            <%= product.name %>
+          <% end %>
+        </td>
+        <td>
+          <%= price_display(product.price) %>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+    <%= link_to "Pay now", "/payments/session", id: "stripe", class:'btn pay-btn' %>
+</div>
   <% end %>
-  <%= link_to "Pay now", "/payments/session", id: "stripe" %>
-<% end %>
-<%= javascript_pack_tag "stripe" %>
+  <%= javascript_pack_tag "stripe" %>

@@ -8,11 +8,10 @@
       <%= link_to Category.find(@product.category_id).name, category_path(@product.category_id) %>
     </div>
 
-    <div class="cart-button">
-      <% if user_signed_in? && @product.user.id != current_user.id && !@product.sold %>
-         <%= link_to "Add to cart", orders_path(product_id: @product), method: :post %>
-      <% end %>
-    </div>
+    <% if user_signed_in? && @product.user.id != current_user.id && !@product.sold %>
+        <%= link_to "Add to cart", orders_path(product_id: @product), method: :post, class: 'btn cart-button' %>
+    <% end %>
+    
     <div class="show-image">
       <%= image_tag @product.image if @product.image.attached? %>
     </div>
