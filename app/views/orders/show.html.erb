@@ -21,7 +21,9 @@
       </tr>
     <% end %>
     </table>
-    <%= link_to "Pay now", "/payments/session", id: "stripe", class:'btn pay-btn' %>
+    <div class="btn pay-btn">
+      <%= link_to "Pay now", "/payments/session", id: "stripe" %>
+    </div>
 </div>
   <% end %>
   <%= javascript_pack_tag "stripe" %>
