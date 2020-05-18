@@ -27,10 +27,8 @@
           <%= link_to 'Delete', product_path(@product), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?"} %>
       <% end %>
 
-      <%= link_to 'Back', products_path, class: 'btn btn-primary' %> 
-    </section>
-  </div>
-    <% if @similar_products.any? %>
+  <div class="similar">
+    <% if @similar_products %>
       <h2>Similar products:</h2>
       <div class="similar">
         <% @similar_products.each do |product| %> 
