@@ -4,13 +4,43 @@
 // @import 'products';
 @import 'sidebar';
 
+// $background: linear-gradient(315deg, #ec9f05 0%, #fc575e 74%);
+// $background: linear-gradient(315deg, #ec9f05 0%, rgb(29, 172, 141) 65%);
+$background: linear-gradient(315deg, #8ad1d9 0%, #177687 74%);
+// $background-image: linear-gradient(to bottom left, #020f24d8 0%, #ffffff91 100%), url("2804174.jpg");
+
+
+
+$background-image: linear-gradient(to bottom, rgba(23, 132, 132, 0) 70%, #046b6875 100%), url("S_6100_170913.jpg"); 
+// $background-image: url("S_6100_170913.jpg"); 
+
+
+
+// $background-image: linear-gradient(to bottom left, #585b5e3a 75%, #062027d8 100%), url("2753862.jpg");
+$nav-background: linear-gradient(315deg, #046b68 0%, #78CDD7 84%);
+// $inset-shadow: inset 0px 0px 7px 0px #75061a; bordo
+$inset-shadow: inset 0px 0px 7px 0px #12414e;
+// $button-color: #A4B494;
+$button-color: #d4c789c4;
+// $card-background: #13202e71;
+
+
+
 body {
 margin-left: 0;
 padding: 0;
-background: linear-gradient(315deg, #ec9f05 0%, #fc575e 74%);
+background-image: $background-image;
+// background: $background;
 background-attachment: fixed;
+background-size: cover;
+background-position: top;
 // font-family: 'Almendra', serif;
 font-family: 'Caudex', serif;
+color: #d2d3d6;
+
+h1, h2 {
+  color: #d2d3d6;
+}
 
 .content{
   margin: 0;
@@ -40,9 +70,10 @@ h2 {font-family: 'Averia Libre', cursive;}
   padding: 12px 25px;
   color: buttontext;
   // background-color: #A4B494; pale-green
-  background-color: #ec9f05d3;
+  background-color: $button-color;
+  // background-color: #ec9f05d3;
   box-sizing: border-box;
-  box-shadow: inset 0px 0px 7px 0px rgba(117,6,26,1);
+  box-shadow: $inset-shadow;
   display: block; 
   font-weight: bold;
   align-self: center;
@@ -65,12 +96,12 @@ h2 {font-family: 'Averia Libre', cursive;}
 a {
     text-decoration: none;
     text-align: right;
-    color: rgb(42, 5, 10);
     align-self: center;
+    color: #d2d3d6;
   }
 
 a:hover {
-  color: rgb(253, 230, 199);
+  color: #4f954a;
 }
 }
 
@@ -82,12 +113,16 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: linear-gradient(315deg, #ec8005 0%, #fa5454 74%);
+  background: $nav-background;
   display: flex;
   flex-direction: row;
   align-items: center;
-  box-shadow: inset 0px 0px 7px 0px rgba(117,6,26,1);
+  box-shadow: $inset-shadow;
   // position: relative;
+
+  a {
+    color: rgb(42, 5, 10);
+  }
 
   * {
     margin: 20px 20px;

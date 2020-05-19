@@ -1,3 +1,6 @@
+$inset-shadow: inset 0px 0px 7px 0px #12414e;
+$card-background: #00858346;
+
 .container {
   width: 60vw;
   margin-left: 22%;
@@ -17,7 +20,8 @@
     height: 300px;
     width: 95%;
     // border: 1px solid rgb(42, 5, 10);
-    box-shadow: inset 0px 0px 7px 0px rgba(117,6,26,1);
+    box-shadow: $inset-shadow;
+    background: $card-background;
   // margin-top: 50px;
 
     // display: flex;

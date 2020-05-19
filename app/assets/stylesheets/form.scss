@@ -1,3 +1,9 @@
+// $background: linear-gradient(315deg, #ec9f05 0%, #fc575e 74%);
+// $background: linear-gradient(315deg, #ec9f05 0%, #A4B494 74%);
+// $inset-shadow: inset 0px 0px 7px 0px rgba(117,6,26,1);
+$inset-shadow: inset 0px 0px 7px 0px #12414e;
+$button-color: #d4c789c4;
+
 .products-form {
   display: flex;
   flex-direction: column;
@@ -24,13 +30,14 @@
   label {
     font-size: 20px;
     margin: 20px 0;
+    color: #d2d3d6;
   }
 
   input[type=submit] {
     display: block;
     margin: 20px 0px;
-    background-color: #A4B494;
-    box-shadow: inset 0px 0px 7px 0px rgba(117,6,26,1);
+    background-color: $button-color;
+    box-shadow: $inset-shadow;
     padding: 12px 25px;
     font-size: 16px;
     font-weight: bold;
