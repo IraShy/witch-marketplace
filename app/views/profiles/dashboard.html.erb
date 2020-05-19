@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>My Dashboard</h1>
+
+  <h3>Unsold products:</h3>
+  <% @unsold_products.each do |product| %> 
+    <%= render 'card', product: product %>
+  <% end %>
+
+  <h3>Sold products:</h3>
+  <% @sold_products.each do |product| %> 
+    <%= render 'card', product: product %>
+  <% end %>
+</div>
