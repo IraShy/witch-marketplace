@@ -1,9 +1,12 @@
 <div class="card">
   <%= image_tag product.image if product.image.attached? %>
-
-  <h3 class="card-title"><%= product.name %></h3>
+  <% if current_user.admin %>
+    <h3 class="card-title"><%= product.name %> (<%= product.user.name %>)</h3>
+  <% else %>
+    <h3 class="card-title"><%= product.name %></h3>
+  <% end %>
   <h5 class="card-subtitle mb-2 text-muted"><%= link_to"#{product.category.name}", category_path(product.category) %></h6>
-  <p class="card-text"><%= product.description %></p>
+  <p class="card-text"><%= product.short_description %></p>
 
   <p class="card-price"><%= product.price_display %></p>
 
