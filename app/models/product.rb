@@ -16,6 +16,8 @@ class Product < ApplicationRecord
   def short_description
     if self.description.length > 70
       self.description[0..69] + '...'
+    else
+      self.description
     end
   end
 end
