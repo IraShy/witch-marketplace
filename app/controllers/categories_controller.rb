@@ -1,7 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :find_category ,only: [ :edit, :update, :destroy] 
   before_action :authenticate_user!, except: [:show]
-  before_action :show_sidebar, only: [:show]
   before_action :find_unsold, only: [:show]
   load_and_authorize_resource
   
@@ -52,10 +51,6 @@ class CategoriesController < ApplicationController
 
   def find_category
     @category = Category.find(params[:id])
-  end
-
-  def show_sidebar
-    @show_sidebar = true
   end
 
   def find_unsold
