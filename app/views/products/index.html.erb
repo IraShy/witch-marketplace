@@ -1,11 +1,7 @@
 <div class="container">
   <% @products.each do |product| %> 
     <div class="card">
-      <% if product.image.attached? %>
-        <%= image_tag product.image  %>
-      <% else %>
-        <%= image_tag 'https://witch-marketplace.s3-ap-southeast-2.amazonaws.com/y3dgv3jdnqapbm02mpyxndppjr9n' %>
-      <% end %>
+      <%= image_tag product.image if product.image.attached? %>
 
       <h3 class="card-title"><%= product.name %></h3>
       <h5 class="card-subtitle mb-2 text-muted"><%= link_to"#{product.category.name}", category_path(product.category) %></h6>
