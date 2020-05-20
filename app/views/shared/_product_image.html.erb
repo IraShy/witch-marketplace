@@ -1,0 +1,5 @@
+<% if product.image.attached? %>
+  <div style="<%= background_image(product) %>"></div>
+<% else %>  
+  <div class="backup-image"></div>
+<% end %>
