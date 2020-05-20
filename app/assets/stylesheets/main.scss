@@ -11,7 +11,7 @@ $background: linear-gradient(315deg, #8ad1d9 0%, #177687 74%);
 
 
 
-$background-image: linear-gradient(to bottom, rgba(23, 132, 132, 0) 70%, #046b6875 100%), url("S_6100_170913.jpg"); 
+$background-image: linear-gradient(to bottom, rgba(23, 132, 132, 0) 70%, #046b6875 100%), image-url("S_6100_170913.jpg"); 
 // $background-image: url("S_6100_170913.jpg"); 
 
 
@@ -29,10 +29,7 @@ $button-color: #d4c789c4;
 body {
 margin-left: 0;
 padding: 0;
-background-image: image-url("S_6100_170913.jpg"); 
-background: linear-gradient(to bottom, rgba(23, 132, 132, 0) 70%, #046b6875 100%);
-// background-image: $background-image;
-
+background-image: $background-image;
 // background: $background;
 background-attachment: fixed;
 background-size: cover;
